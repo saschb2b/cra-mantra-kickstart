@@ -38,8 +38,6 @@ function Pokemon(props) {
     );
   }
 
-  console.log(pokemon);
-
   const { attacks, evolutions, image, name, number } = pokemon;
 
   return (
@@ -89,7 +87,34 @@ function Pokemon(props) {
 
 Pokemon.propTypes = {
   classes: PropTypes.object.isRequired,
-  pokemon: PropTypes.shape()
+  pokemon: PropTypes.shape({
+    attacks: PropTypes.shape({
+      fast: PropTypes.arrayOf(
+        PropTypes.shape({
+          damage: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired
+        })
+      ),
+      special: PropTypes.arrayOf(
+        PropTypes.shape({
+          damage: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired
+        })
+      )
+    }),
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+    evolutions: PropTypes.arrayOf(
+      PropTypes.shape({
+        image: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired
+      })
+    )
+  })
 };
 
 Pokemon.defaultProps = {
