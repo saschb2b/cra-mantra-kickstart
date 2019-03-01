@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/cra-mantra-kickstart/precache-manifest.4c3cb885e1979c3a6516c7b0eb37de7a.js"
+  "/cra-mantra-kickstart/precache-manifest.ec9e22d7cdfdef0372745c85c1f822c5.js"
 );
 
 workbox.clientsClaim();

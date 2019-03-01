@@ -1,11 +1,11 @@
 {
-  "main.js": "/cra-mantra-kickstart/static/js/main.87dd8c82.chunk.js",
-  "main.js.map": "/cra-mantra-kickstart/static/js/main.87dd8c82.chunk.js.map",
+  "main.js": "/cra-mantra-kickstart/static/js/main.b4f3a740.chunk.js",
+  "main.js.map": "/cra-mantra-kickstart/static/js/main.b4f3a740.chunk.js.map",
   "runtime~main.js": "/cra-mantra-kickstart/static/js/runtime~main.f460bf16.js",
   "runtime~main.js.map": "/cra-mantra-kickstart/static/js/runtime~main.f460bf16.js.map",
   "static/js/2.c18c851c.chunk.js": "/cra-mantra-kickstart/static/js/2.c18c851c.chunk.js",
   "static/js/2.c18c851c.chunk.js.map": "/cra-mantra-kickstart/static/js/2.c18c851c.chunk.js.map",
   "index.html": "/cra-mantra-kickstart/index.html",
-  "precache-manifest.4c3cb885e1979c3a6516c7b0eb37de7a.js": "/cra-mantra-kickstart/precache-manifest.4c3cb885e1979c3a6516c7b0eb37de7a.js",
+  "precache-manifest.ec9e22d7cdfdef0372745c85c1f822c5.js": "/cra-mantra-kickstart/precache-manifest.ec9e22d7cdfdef0372745c85c1f822c5.js",
   "service-worker.js": "/cra-mantra-kickstart/service-worker.js"
 }
