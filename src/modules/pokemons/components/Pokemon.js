@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { CircularProgress, Typography, withStyles } from "@material-ui/core";
 import PokemonCard from "./PokemonCard";
+import Attack from "./Attack";
 
 const styles = theme => ({
   root: {
@@ -37,13 +38,41 @@ function Pokemon(props) {
     );
   }
 
-  const { evolutions, image, name, number } = pokemon;
+  console.log(pokemon);
+
+  const { attacks, evolutions, image, name, number } = pokemon;
 
   return (
     <div className={classes.root}>
       <Typography variant={"caption"}>{number}</Typography>
       <Typography variant={"h3"}>{name}</Typography>
       <img className={classes.image} src={image} />
+      <div className={classes.section}>
+        <Typography variant={"h5"}>Fast Attacks</Typography>
+        <div className={classes.grid}>
+          {attacks.fast.map(attack => (
+            <Attack
+              key={attack.name}
+              damage={attack.damage}
+              name={attack.name}
+              type={attack.type}
+            />
+          ))}
+        </div>
+      </div>
+      <div className={classes.section}>
+        <Typography variant={"h5"}>Special Attacks</Typography>
+        <div className={classes.grid}>
+          {attacks.special.map(attack => (
+            <Attack
+              key={attack.name}
+              damage={attack.damage}
+              name={attack.name}
+              type={attack.type}
+            />
+          ))}
+        </div>
+      </div>
       {evolutions && (
         <div className={classes.section}>
           <Typography variant={"h5"}>Evolutions</Typography>
