@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CircularProgress, Typography, withStyles } from "@material-ui/core";
+import {
+  CircularProgress,
+  Paper,
+  Typography,
+  withStyles
+} from "@material-ui/core";
 import PokemonCard from "./PokemonCard";
 import Attack from "./Attack";
 
@@ -11,17 +16,24 @@ const styles = theme => ({
     margin: "0 auto",
     maxWidth: 800
   },
-  loading: {
-    display: "flex",
-    justifyContent: "center"
-  },
   grid: {
     display: "flex",
     flexWrap: "wrap"
   },
+  header: {
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "space-between",
+    margin: "16px 0",
+    padding: 16
+  },
   image: {
     height: "auto",
     width: 200
+  },
+  loading: {
+    display: "flex",
+    justifyContent: "center"
   },
   section: {
     paddingBottom: 16
@@ -42,9 +54,13 @@ function Pokemon(props) {
 
   return (
     <div className={classes.root}>
-      <Typography variant={"caption"}>{number}</Typography>
-      <Typography variant={"h3"}>{name}</Typography>
-      <img className={classes.image} src={image} />
+      <Paper className={classes.header}>
+        <img alt={name} className={classes.image} src={image} />
+        <div>
+          <Typography variant={"caption"}>{number}</Typography>
+          <Typography variant={"h3"}>{name}</Typography>
+        </div>
+      </Paper>
       <div className={classes.section}>
         <Typography variant={"h5"}>Fast Attacks</Typography>
         <div className={classes.grid}>

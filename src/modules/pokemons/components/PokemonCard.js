@@ -33,20 +33,21 @@ const styles = theme => ({
 });
 
 function PokemonCard({ classes, pokemon }) {
+  const { id, image, name, number } = pokemon;
   return (
     <Paper className={classes.root}>
       <div className={classes.header}>
         <Typography className={classes.headerText} variant={"caption"}>
-          {pokemon.number}
+          {number}
         </Typography>
-        <Typography className={classes.headerText}>{pokemon.name}</Typography>
+        <Typography className={classes.headerText}>{name}</Typography>
       </div>
-      <img className={classes.image} src={pokemon.image} />
+      <img alt={name} className={classes.image} src={image} />
       <Button
         className={classes.details}
         component={Link}
         variant={"outlined"}
-        to={`/dashboard/pokemons/${pokemon.id}`}
+        to={`/dashboard/pokemons/${id}`}
       >
         Details
       </Button>
