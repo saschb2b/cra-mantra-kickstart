@@ -9,7 +9,7 @@ const styles = theme => ({
     flexDirection: "column",
     justifyContent: "space-between",
     margin: `0 ${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px 0`,
-    width: 200
+    width: 205
   },
   header: {
     backgroundColor: Grey[200],
@@ -21,16 +21,17 @@ const styles = theme => ({
     color: Grey[700]
   },
   image: {
-    height: "auto",
+    height: 100,
     margin: "8px auto",
-    width: 100
+    width: "auto",
+    maxWidth: "100%"
   },
   details: {
     margin: theme.spacing.unit
   }
 });
 
-function Pokemon({ classes, pokemon }) {
+function PokemonCard({ classes, pokemon }) {
   return (
     <Paper className={classes.root} key={pokemon.id}>
       <div className={classes.header}>
@@ -47,7 +48,7 @@ function Pokemon({ classes, pokemon }) {
   );
 }
 
-Pokemon.propTypes = {
+PokemonCard.propTypes = {
   classes: PropTypes.object.isRequired,
   pokemon: PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -57,4 +58,4 @@ Pokemon.propTypes = {
   }).isRequired
 };
 
-export default withStyles(styles)(Pokemon);
+export default withStyles(styles)(PokemonCard);

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Fab, withStyles } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-import Pokemon from "./Pokemon";
+import PokemonCard from "./PokemonCard";
 
 const styles = theme => ({
   fab: {
@@ -23,7 +23,7 @@ function Pokemons(props) {
     <div>
       <div className={classes.grid}>
         {pokemons.map(pokemon => (
-          <Pokemon pokemon={pokemon} />
+          <PokemonCard pokemon={pokemon} />
         ))}
       </div>
       <Fab
