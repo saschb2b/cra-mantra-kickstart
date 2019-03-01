@@ -15,7 +15,9 @@ importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js"
 );
 
-importScripts("/precache-manifest.019634e84b6c3a383eb7d0264bd258a6.js");
+importScripts(
+  "/cra-mantra-kickstart/precache-manifest.957796507d1b5b5a65636e72301bbdb9.js"
+);
 
 workbox.clientsClaim();
 
@@ -28,6 +30,6 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/index.html", {
+workbox.routing.registerNavigationRoute("/cra-mantra-kickstart/index.html", {
   blacklist: [/^\/_/, /\/[^\/]+\.[^\/]+$/]
 });
