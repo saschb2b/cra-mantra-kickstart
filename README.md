@@ -4,6 +4,8 @@ This repo is for testing clean ways to fetch data, handle loading cycles, displa
 
 Feel free to mark any bad code style or help me improve it by contributing. Would really appreciate it!
 
+DEMO: https://saschb2b.github.io/cra-mantra-kickstart
+
 ## Development
 
 ```
