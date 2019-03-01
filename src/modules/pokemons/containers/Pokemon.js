@@ -1,13 +1,14 @@
 import React from "react";
-import Pokemon from "../components/Pokemon";
+import PropTypes from "prop-types";
 import { Query } from "react-apollo";
+import Pokemon from "../components/Pokemon";
 import { getPokemonById } from "../queries";
 
-function Container(props) {
+function Container({ match }) {
   return (
     <Query
       query={getPokemonById}
-      variables={{ id: "UG9rZW1vbjowMDE=" }}
+      variables={{ id: match.params.id }}
       fetchPolicy="network-only"
     >
       {({ data, loading, error }) => (
@@ -15,11 +16,14 @@ function Container(props) {
           pokemon={data && data.pokemon}
           loading={loading}
           error={error}
-          {...props}
         />
       )}
     </Query>
   );
 }
+
+Container.propTypes = {
+  match: PropTypes.object.isRequired
+};
 
 export default Container;

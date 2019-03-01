@@ -21,6 +21,9 @@ const styles = theme => ({
   image: {
     height: "auto",
     width: 200
+  },
+  section: {
+    paddingBottom: 16
   }
 });
 
@@ -34,17 +37,23 @@ function Pokemon(props) {
     );
   }
 
+  const { evolutions, image, name, number } = pokemon;
+
   return (
     <div className={classes.root}>
-      <Typography variant={"caption"}>{pokemon.number}</Typography>
-      <Typography variant={"h3"}>{pokemon.name}</Typography>
-      <img className={classes.image} src={pokemon.image} />
-      <Typography variant={"h5"}>Evolutions</Typography>
-      <div className={classes.grid}>
-        {pokemon.evolutions.map(evolution => (
-          <PokemonCard key={evolution.id} pokemon={evolution} />
-        ))}
-      </div>
+      <Typography variant={"caption"}>{number}</Typography>
+      <Typography variant={"h3"}>{name}</Typography>
+      <img className={classes.image} src={image} />
+      {evolutions && (
+        <div className={classes.section}>
+          <Typography variant={"h5"}>Evolutions</Typography>
+          <div className={classes.grid}>
+            {evolutions.map(evolution => (
+              <PokemonCard key={evolution.id} pokemon={evolution} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
