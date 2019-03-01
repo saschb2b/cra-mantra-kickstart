@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Dashboard from "../components/Dashboard";
-import Pokemons from "../../pokemons/components/Pokemons";
+import Pokemons from "../../pokemons/containers/Pokemons";
 
 export default () => (
   <Route
