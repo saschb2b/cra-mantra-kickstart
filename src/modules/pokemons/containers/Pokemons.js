@@ -1,57 +1,23 @@
 import React from "react";
 import Pokemons from "../components/Pokemons";
 import { Query } from "react-apollo";
-import gpl from "graphql-tag";
-
-const getPokemons = gpl`
-query getPokemons($first: Int!) {
-  pokemons(first: $first) {
-    id
-    number
-    name
-    attacks {
-      special {
-        name
-        type
-        damage
-      }
-    }
-    evolutions {
-      id
-      number
-      name
-      weight {
-        minimum
-        maximum
-      }
-      attacks {
-        fast {
-          name
-          type
-          damage
-        }
-      }
-    }
-  }
-}`;
+import { getPokemons } from "../queries";
 
 function Container(props) {
   return (
     <Query
       query={getPokemons}
-      variables={{ first: 1 }}
+      variables={{ first: 151 }}
       fetchPolicy="network-only"
     >
-      {({ data, loading, error }) =>
-        console.log(data) || (
-          <Pokemons
-            pokemons={data && data.pokemons}
-            loading={loading}
-            error={error}
-            {...props}
-          />
-        )
-      }
+      {({ data, loading, error }) => (
+        <Pokemons
+          pokemons={data && data.pokemons}
+          loading={loading}
+          error={error}
+          {...props}
+        />
+      )}
     </Query>
   );
 }
