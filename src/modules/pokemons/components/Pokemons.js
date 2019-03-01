@@ -23,7 +23,7 @@ function Pokemons(props) {
     <div>
       <div className={classes.grid}>
         {pokemons.map(pokemon => (
-          <PokemonCard pokemon={pokemon} />
+          <PokemonCard key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
       <Fab

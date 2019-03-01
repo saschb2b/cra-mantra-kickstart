@@ -34,7 +34,7 @@ const styles = theme => ({
 
 function PokemonCard({ classes, pokemon }) {
   return (
-    <Paper className={classes.root} key={pokemon.id}>
+    <Paper className={classes.root}>
       <div className={classes.header}>
         <Typography className={classes.headerText} variant={"caption"}>
           {pokemon.number}
@@ -57,7 +57,7 @@ function PokemonCard({ classes, pokemon }) {
 PokemonCard.propTypes = {
   classes: PropTypes.object.isRequired,
   pokemon: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired

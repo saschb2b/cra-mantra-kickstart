@@ -20,6 +20,7 @@ query getPokemonById($id: String!) {
       id
       number
       name
+      image
     }
   }
 }

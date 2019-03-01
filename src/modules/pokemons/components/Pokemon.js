@@ -1,25 +1,52 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { CircularProgress, Typography, withStyles } from "@material-ui/core";
 import PokemonCard from "./PokemonCard";
 
 const styles = theme => ({
-  fab: {
-    bottom: theme.spacing.unit * 3,
-    position: "fixed",
-    right: theme.spacing.unit * 3
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    margin: "0 auto",
+    maxWidth: 800
+  },
+  loading: {
+    display: "flex",
+    justifyContent: "center"
   },
   grid: {
     display: "flex",
-    flexWrap: "wrap",
-    marginTop: 16
+    flexWrap: "wrap"
+  },
+  image: {
+    height: "auto",
+    width: 200
   }
 });
 
 function Pokemon(props) {
-  const { classes, pokemon } = props;
-  console.log(pokemon);
-  return <div>pokemon!!</div>;
+  const { classes, loading, pokemon } = props;
+  if (loading) {
+    return (
+      <div className={classes.loading}>
+        <CircularProgress />
+      </div>
+    );
+  }
+
+  return (
+    <div className={classes.root}>
+      <Typography variant={"caption"}>{pokemon.number}</Typography>
+      <Typography variant={"h3"}>{pokemon.name}</Typography>
+      <img className={classes.image} src={pokemon.image} />
+      <Typography variant={"h5"}>Evolutions</Typography>
+      <div className={classes.grid}>
+        {pokemon.evolutions.map(evolution => (
+          <PokemonCard key={evolution.id} pokemon={evolution} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 Pokemon.propTypes = {
