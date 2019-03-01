@@ -2,6 +2,7 @@ import { Button, Paper, Typography, withStyles } from "@material-ui/core";
 import Grey from "@material-ui/core/colors/grey";
 import PropTypes from "prop-types";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -41,7 +42,12 @@ function PokemonCard({ classes, pokemon }) {
         <Typography className={classes.headerText}>{pokemon.name}</Typography>
       </div>
       <img className={classes.image} src={pokemon.image} />
-      <Button className={classes.details} variant={"outlined"}>
+      <Button
+        className={classes.details}
+        component={Link}
+        variant={"outlined"}
+        to={`/dashboard/pokemons/${pokemon.id}`}
+      >
         Details
       </Button>
     </Paper>
