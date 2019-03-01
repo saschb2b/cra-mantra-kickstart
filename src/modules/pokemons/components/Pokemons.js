@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Fab, withStyles } from "@material-ui/core";
+import { CircularProgress, Fab, withStyles } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import PokemonCard from "./PokemonCard";
 
@@ -14,11 +14,23 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     marginTop: 16
+  },
+  loading: {
+    display: "flex",
+    justifyContent: "center"
   }
 });
 
 function Pokemons(props) {
-  const { classes, pokemons } = props;
+  const { classes, loading, pokemons } = props;
+  if (loading) {
+    return (
+      <div className={classes.loading}>
+        <CircularProgress />
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className={classes.grid}>
